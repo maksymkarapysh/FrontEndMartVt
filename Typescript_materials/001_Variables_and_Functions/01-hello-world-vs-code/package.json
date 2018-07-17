@@ -1,0 +1,16 @@
+{
+  "name": "01-hello-world-vs-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc app.ts",
+    "dev": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.4.0",
+    "typescript": "^2.9.2"
+  }
+}
