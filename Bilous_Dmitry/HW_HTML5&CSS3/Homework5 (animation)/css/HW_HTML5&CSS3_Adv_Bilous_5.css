@@ -1,0 +1,236 @@
+/* Normalise .css */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font: 14px/16px 'Open Sans', sans-serif;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a, a:hover {
+    color: #000;
+    text-decoration: none;
+}
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {clear: both;}
+
+/* main css*/
+
+.pulsar{
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	animation: puls 3s linear ;
+	animation-iteration-count: infinite;
+	padding: 5px;
+	display: none;
+}
+@keyframes puls {
+	from {
+		background: #A72608;
+		transform: scale(1.4);
+	}
+	50% {
+		background: rgba(167,68,8,0.3);
+		transform: scale(1.1);
+	}
+	to {
+		background: #A72608;
+		transform: scale(1.4);
+	}
+}
+.grid-menu{
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	background: url(../img/bg.jpg) no-repeat center ;
+	border-bottom: 2px solid #888;
+}
+.logo{
+	height: 100px;
+}
+.grid-list{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr)
+}
+.menu-item{
+	z-index: 1;
+	display: grid;
+	text-align: center;
+	align-content: center;	
+	background: transparent;
+	opacity: 1;
+	line-height: 58px;
+	border-left: 1px solid #888;
+	transition: 0.4s;
+	position: relative;
+}
+.menu-item a{
+	color: #777;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+.menu-item:hover{
+	background: #E8EEF2;
+}
+.sub-menu{
+	display: none;
+	width: 100%;
+	background: #E8EEF2;
+	opacity: 1;
+	position: absolute;
+	top: 100px;
+	transform-origin: 50% 0;
+}
+.sub-menu .menu-item{
+	border: 1px solid #888;
+	padding: 0px;
+	font-size: 14px;
+	line-height: 28px;
+	transition: 1s;
+}
+.sub-menu .menu-item a{
+	font-size: 14px;
+	line-height: 25px;
+	font-weight: 500;
+}
+.sub-menu .menu-item:hover {
+	background: red;
+}
+.sub-menu .menu-item:hover a{
+	color: #fff;
+}
+.menu-item:hover .submenu>.menu-item{
+	display: block;
+}
+ul li:hover>ul{
+	display: block;
+	animation: showMenu 0.6s ease; 
+}
+@keyframes showMenu{
+	0%{
+		display: block;
+		transform: perspective(400px) rotateX(-90deg);
+	}
+	100%{
+		transform: perspective(0px) rotateX(0deg);
+	}
+}
+
+/* search block*/
+.menu-item:last-child{
+	position: relative;
+}
+.menu-item:last-child:hover .cube{
+	animation: 0.5s cube ease;
+	transform-origin: center center;
+	animation-fill-mode: forwards;
+}
+.cube{
+	position: relative;
+	transform-style: preserve-3d;
+	height: 100%;
+}
+
+@keyframes cube{
+	from{
+		transform: rotateX(0deg)
+	}
+	to{
+		transform: rotateX(90deg)
+	}
+}
+
+.bottom-side{
+	transform: rotateX(-90deg) translateY(0px);
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+.search{	
+	padding: 10px;
+	color: #fff;
+	background: #999999;
+	border: 1px solid #fff;	
+	border-radius: 6px;
+	margin-left: 10px;
+	margin-right: 10px;
+	left: 10px;
+	right: 10px;
+}
+.fa-search{
+	cursor: pointer;
+	font-size: 22px;
+	padding: 20px;
+	height: 100%;
+}
+
+/* map container*/
+.map_cont{
+	height: calc(100% - 102px);
+	background: red;
+}
+
+/* info card styles */
+.info-card{
+	text-align: center;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 1px solid #888;
+}
+.info-card h4{
+	color: #888;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 25px;
+	padding: 0 10px 10px 10px;
+	border-radius: 50%;
+}
+.info-card img{
+	width: 140px;
+	height: auto;
+}

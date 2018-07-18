@@ -1,0 +1,110 @@
+$zero-size: 0px;
+$size-main: 10px;
+$size-width: 100;
+$center: center;
+$color-dark: #333;
+$color-grey: #808080;
+$color-orange: orange;
+$color-green: #56eb1a;
+$color-blue: #308eee;
+$font-family-main: Oswald;
+$font-family-secondary: sans-serif;
+
+
+body{
+padding: $zero-size;
+margin: $zero-size;
+color: $color-dark;
+
+}
+
+.grid{
+display:grid;
+
+}
+
+header .grid{
+    background-image: url("../img/header.jpg");
+    min-height: $size-width+vh;
+    background-size:cover;
+    align-content: $center;
+    position: relative;
+    background-position: $center;
+
+    &::before{
+        position: absolute;
+        content: "";
+        top:$zero-size;
+        left: $zero-size;
+        right: $zero-size;
+        bottom: $zero-size;
+        background-color:$color-grey;
+        opacity:0.70;
+
+    }
+
+
+}
+
+.header-container{
+color:lighten($color: $color-dark, $amount: 100);
+text-align:center;
+
+
+
+h1{
+    font-size: $size-main*6;
+    font-family: $font-family-main;
+    text-transform: uppercase;
+
+}
+
+}
+
+
+@import "buttons";
+@import "forms";
+@import "myblog";
+@import "port-section";
+
+///////////about//////////////
+
+.section-ready {
+    background-color: lighten($color-grey, 46);
+
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.ready-left {
+    border-right: $size-main/10 solid $color-grey;
+    font-size: $size-main+8px;
+    font-family: $font-family-main;
+
+    padding: {
+        top: 60px;
+        left: 60px;
+        right: 60px;
+        bottom:60px;;
+    }
+    h2 {
+      
+            margin-top:$zero-size;
+            margin-bottom:$size-main*4;
+        
+    }
+}
+.img-responsive {
+    max-width:$size-width;
+    display:block;
+    height:auto;
+}
+.ready-right {
+    
+        padding-left:$size-main*2;
+        padding-top:$size-main*3;
+        padding-right:$size-main*2;
+        padding-bottom:$size-main;
+    
+}
