@@ -1,0 +1,235 @@
+@import url(http://fonts.googleapis.com/css?family=Bad+Script&subset=cyrillic,latin);
+
+/* Normalise .css */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font: 14px/16px 'Open Sans', sans-serif;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a, a:hover {
+    color: #000;
+    text-decoration: none;
+}
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {clear: both;}
+
+/* main css */ 
+body {
+  background: linear-gradient( #bbb, transparent 1px), linear-gradient( 90deg, #bbb, transparent 1px);
+  background-size: 15px 15px;
+  background-position: center center;
+  font-family: 'Bad Script', cursive;
+  font-size: 18px;
+}
+.grid{
+	display: grid;
+}
+
+h1{
+	font-size: 32px;
+	line-height: 50px;
+	color: #000069;
+	padding: 10px;
+	text-align: center;
+}
+.container{
+	padding: 30px 5%;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+section{
+	padding: 30px;
+}
+.garage{
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: 1fr 1fr; 
+}
+.col{
+	grid-template-columns: 1fr 1fr;
+}
+.col div{
+	position: relative;
+}
+.col div:last-child span{
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+}
+.ship{
+	padding: 10px;
+
+}
+.ship-cont div{
+	background: #fff;
+	height: 20px;
+	width: 20px;
+	border: 2px solid #000069;
+}
+
+/* battlefield */
+
+.field{
+	grid-template-columns: repeat(11, 1fr);
+	grid-template-rows: repeat(11, 1fr);
+	width: 220px;
+	height: 220px;
+}
+.field div{
+	height: 20px;
+	width: 20px;
+	border: 1px solid #8787ff;
+	background: #fff;
+	cursor: pointer;
+}
+.enemie {
+	position: relative;
+}
+.enemie .field div:hover{
+	background: #fff000;
+	border: 1px solid red;
+}
+.empty{
+	border: none !important;
+	background: transparent !important;
+}
+.letters,.numbers{
+	font-family: arial, sans-serif;
+	font-size: 10px;
+	text-align: center;
+	padding-top: 5px;
+	border-bottom: 1px solid #8787ff;
+	border: none !important;
+	background: transparent !important;
+}
+.numbers{
+	border-right: 1px solid #8787ff;
+	border-bottom: 0;
+}
+/* ships */
+
+section .field .ship-section{
+	border: 2px solid #000069 !important;
+	height: auto !important;
+	width: auto !important;
+	background: #000069;
+}
+h4{
+	padding-top: 15px;
+	text-align: center;
+	text-transform: lowercase;
+	font-size: 14px;
+}
+
+/* Подсказка */ 
+.alert{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 140px;
+	height: 40px;
+	text-align: center;
+	background-color: #fff;
+	border: 3px solid #000069;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	-moz-box-shadow: 2px 2px 4px #888;
+	box-shadow: 2px 2px 4px #888;
+	font-size: 12px;
+	line-height: 32px;
+	transform: rotateX(90deg);
+	transform-origin: bottom;
+
+}
+
+	@keyframes showAlert{
+		from{
+			transform: rotateX(90deg);
+		}	
+		to{
+			transform: rotateX(0deg);
+		}
+	}
+	@keyframes hideAlert{
+		from{
+			transform: rotateX(00deg);
+		}	
+		to{
+			transform: rotateX(90deg);
+		}
+	}
+.alert:before { 
+	content: ' '; 
+	position: absolute; 
+	width: 0; 
+	height: 0; 
+	left: 30px; 
+	top: 35px; 
+	border: 6px solid; 
+	border-color: #000069 transparent transparent #000069; 
+}
+.alert:after{
+	content: ' '; 
+	position: absolute; 
+	width: 0; 
+	height: 0; 
+	left: 33px; 
+	top: 34px; 
+	border: 3px solid; 
+	border-color: #fff transparent transparent #fff; 
+}
+.animateShow{
+	animation: 1s showAlert ease;
+	animation-iteration-count:1;
+	animation-fill-mode: forwards;
+}
+.animateHide{
+	animation: 1s hideAlert ease;
+	animation-iteration-count:1;
+	animation-fill-mode: forwards;
+}
