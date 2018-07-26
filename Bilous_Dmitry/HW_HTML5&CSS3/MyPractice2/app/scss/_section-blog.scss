@@ -1,0 +1,88 @@
+﻿/*Section blog*/
+.blog-section h1 {
+    margin: 30px 30px;
+    color: $grey;
+    font-size: 3em;
+    font-family: $font-family-secondary;
+}
+
+.blog {
+    &-container {
+        grid-gap: 20px;
+        grid-template-columns: repeat(4,1fr);
+        font-family: $font-family-secondary;
+        a{
+            
+            color: $grey;
+            background-color: lighten($grey, 46);
+            transition: .7s ease;        
+            text-decoration: none;
+            overflow: hidden;
+            div:first-child{
+                background-position: center;
+                background-size: cover; 
+                transition: .5s ease;   
+                height: 35vh;            
+            }
+            div:first-child:hover{
+                transform: scale(1.1) translateY(-11px);
+            }
+            
+            div:last-child{
+                text-align: center;
+                align-content: center;
+                padding: 20px;
+                background-color: transparent;
+                transition:.5s ease;
+                h4{
+                    font-size: 1.2rem;
+                    height: 500;
+                }
+                p{
+                    margin:0;
+                }
+            }
+        }
+        a:nth-child(3){
+            grid-column: 3/5;
+        }
+        a:nth-child(4){
+            grid-column:1/3;
+        }
+        .frame{
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0px;
+            overflow: hidden;
+            iframe{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                border: 0px;
+            }
+        }
+        a:hover{
+            div:last-child{
+                background-color: lighten($grey,43);
+            }
+        }
+        .btn-container{
+            text-align: center;
+            grid-column: 1/5;
+            padding:20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            a{
+                padding:20px 70px;
+                color: $white;
+                background: orange;
+            }
+            a:hover{
+                box-shadow: 3px 3px 7px $dark;
+            }
+        }
+    }
+}     

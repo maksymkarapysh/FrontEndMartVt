@@ -1,0 +1,33 @@
+﻿//Section-about
+ .container{
+    max-width:1200px;
+    margin:auto;
+    padding: 0 20px;
+}
+.about-section{
+         background-color: lighten($grey, 46);
+   .grid{
+        grid-template-columns: 1fr 1fr;
+        .left-col{
+            border-right: 1px solid $dark;
+            font-size: 18px;
+            font-family: Oswald;
+            padding: 60px 60px 20px 60px;
+            h4{
+                font-weight: bold;
+                font-size: 1.5em;
+                margin-bottom: 40px;
+            }
+        }
+        .right-col{
+            padding: 60px 60px 20px 60px;
+            img{
+                max-width:100%;
+                display: block;
+            }
+        }
+    }    
+}
+
+
+    
