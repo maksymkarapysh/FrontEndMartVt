@@ -1,0 +1,21 @@
+<div class="container">
+  <table class="table table-hover table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col" item-width="20"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of filterProducts(); let i = index">
+          <td scope="row">{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td><button class="btn" (click)="delete(item)">Delete</button></td>
+        </tr>
+    </tbody>
+  </table>
+  <p>{{rows}}</p>
+</div>
