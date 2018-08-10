@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { MatTableModule, MatGridListModule, MatToolbarModule, MatSortModule, MatPaginatorModule, MatButtonModule} from '@angular/material';
+import { MatInputModule, MatAutocompleteModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MyTableComponent } from './my-table/my-table.component';
@@ -19,7 +20,9 @@ import { MyTableComponent } from './my-table/my-table.component';
     MatToolbarModule,
     MatSortModule,
     MatPaginatorModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
