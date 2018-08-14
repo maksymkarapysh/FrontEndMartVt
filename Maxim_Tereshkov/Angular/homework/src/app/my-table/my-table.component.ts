@@ -1,14 +1,9 @@
 import { Input, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { FormControl } from '@angular/forms';
+import { IProduct } from '../products.interface';
 
-export interface IProducts {
-  id: number;
-  name: string;
-  price: number;
-  category: string;
-}
-
-const PRODUCTS: IProducts[] = [
+const PRODUCTS: IProduct[] = [
   { id: 1, name : 'product 1', price : 100, category: 'Category 1' },
   { id: 2, name : 'product 2', price : 200, category: 'Category 2' },
   { id: 3, name : 'product 3', price : 300, category: 'Category 3' },
@@ -27,7 +22,9 @@ const PRODUCTS: IProducts[] = [
 })
 export class MyTableComponent implements OnInit {
 
-  products = new MatTableDataSource<IProducts>(PRODUCTS);
+  myForm = new FormControl('');
+
+  products = new MatTableDataSource<IProduct>(PRODUCTS);
   columnsToDisplay = ['id', 'name', 'price', 'delete'];
   @Input() rows;
   @Output() changeTable = new EventEmitter<number>();
@@ -39,12 +36,23 @@ export class MyTableComponent implements OnInit {
     this.products.paginator = this.paginator;
   }
 
+  applyFilter(filterValue: string) {
+    this.products.filter = filterValue.trim().toLowerCase();
+  }
+
+  getUniqueCategory() {
+    return [...Array.from(new Set(this.products.data.map( item => item.category )))];
+  }
+
+  newItem(item: IProduct) {
+    const data = this.products.data;
+    data.push(item);
+    this.products.data = data;
+    this.products.sort.sort({disableClear: false, id: 'id', start: 'asc'});
+  }
+
   deleteItem(item) {
     this.products.data = this.products.data.filter( el => el.id !== item.id  );
     this.changeTable.emit(item.id);
-  }
-
-  applyFilter(filterValue: string) {
-    this.products.filter = filterValue.trim().toLowerCase();
   }
 }

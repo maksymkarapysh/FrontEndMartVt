@@ -1,6 +1,14 @@
-<mat-form-field>
+<!-- <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field> -->
+
+<mat-form-field>
+  <input type="text" matInput [formControl]="myForm" [matAutocomplete]="auto" placeholder="Category" aria-label="Category">
 </mat-form-field>
+
+<mat-autocomplete #auto="matAutocomplete" (optionSelected)="applyFilter($event.option.value)">
+  <mat-option *ngFor="let category of getUniqueCategory()" [value]="category">{{category}}</mat-option>
+</mat-autocomplete>
 
 <table mat-table [dataSource]="products" matSort>
 
@@ -33,3 +41,5 @@
 
 </table>
 <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="rows"></mat-paginator>
+
+<app-add-item (newItem)="newItem($event)"></app-add-item>

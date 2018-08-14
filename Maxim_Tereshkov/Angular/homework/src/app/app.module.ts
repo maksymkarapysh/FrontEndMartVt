@@ -3,14 +3,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { MatTableModule, MatGridListModule, MatToolbarModule, MatSortModule, MatPaginatorModule, MatButtonModule} from '@angular/material';
 import { MatInputModule, MatAutocompleteModule } from '@angular/material';
+import { ReactiveFormsModule , FormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppComponent } from './app.component';
 import { MyTableComponent } from './my-table/my-table.component';
+import { AddItemComponent } from './my-table/add-item/add-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyTableComponent
+    MyTableComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,10 @@ import { MyTableComponent } from './my-table/my-table.component';
     MatPaginatorModule,
     MatButtonModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
