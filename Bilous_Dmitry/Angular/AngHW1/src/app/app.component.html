@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <h2 class="alert-primary">Angular 2 Homework 1 </h2>
+  <P>Создайте простое приложение используя Angular 2.Определите в AppComponent следующий массив.
+    const VALUES = ["Hello World", "Привет Мир","Привіт Світ", "Hola Mundo", "Bonjour le monde", "Hallo Welt", "Ciao
+    mondo", "Witaj świecie", "Hej världen", "Pozdravljen, svet", "Прывітанне Сусвет"];
+    Выведите массив в виде списка в шаблоне AppComponent
+  </P>
+  <ul class="list-group">
+      <li class="list-group-item list-group-item-action" *ngFor="let value of values; let i=index">
+        {{i+1}} : {{value}}
+      </li>
+    </ul>
+</div>
+
+

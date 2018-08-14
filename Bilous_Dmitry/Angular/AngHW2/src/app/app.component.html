@@ -1,0 +1,49 @@
+
+<div class="container">
+    <h2 class="alert-primary">Angular 2 Homework 2 </h2>
+    <pre>
+        Задание 1
+        Создайте компонент my-table, который будет отображать данные в виде таблицы.
+        Информация для отображения:
+        Данные должны выводиться в три столбца. Компонент должен использовать параметр rows с
+        помощью, которого можно установить количество строк, которые отображаются в таблице.
+        Например:  &lt;my-table rows=”3”&gt;  &lt;/my-table&gt; при, таком использовании, в таблице должны
+        отображаться первые три строки.
+        Задание 2.
+        Добавьте в компонент my-table оформление с помощью стилей взятых из bootstrap.
+        Используйте класс table и table-stripped
+        Задание 3
+        Добавьте в компонент my-table напротив каждой строки кнопку удалить. Сделайте так, чтобы
+        при нажатии на эту кнопку удалялся элемент из таблицы и происходило событие delete.
+        Событие delete должен фиксировать родительский компонент, при этом в консоль нужно
+        отображать id удаленного компонента.
+            
+    </pre>
+    <table class="table table-striped">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Prise</td>
+            <td></td>
+        </tr>
+        <tr *ngFor="let product of products, let i = index">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td class="btn bg-danger" (click)="delItem(i)">X</td>
+        </tr>
+    </table>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">rows</label>
+        </div>
+        <select class="custom-select"  id="inputGroupSelect01" >
+            <option selected value="1">Choose...</option>
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="9">9</option>
+        </select>
+    </div>
+  </div>
+  
+
