@@ -36,6 +36,7 @@ export class AppMyTableComponent {
     return this.products.slice(0, this._rows);
   }
 
+  'delete'(itemDel) {
   delete(itemDel) {
     this.products = this.products.filter( item => item !== itemDel  );
     this.onDelete.emit(itemDel.id);
