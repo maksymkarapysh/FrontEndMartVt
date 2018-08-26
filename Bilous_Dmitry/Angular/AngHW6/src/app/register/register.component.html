@@ -1,0 +1,15 @@
+<div class="formCont">
+  <h2>Sign Up For Free!</h2>
+  <form action="#">
+    <div class="row1">
+        <input type="text" name="firstName" placeholder="First name" required >
+        <input type="text" name="lastName" placeholder="Last name" required >
+    </div>
+    <input type="text" name="email" placeholder="Enter your email" required [(ngModel)]="model.email" #email="ngModel">
+    <div [hidden]='model.valid||model.pristine' class="alert alert-warning error">{{errors.email}}</div>
+    <input type="password" name="password" placeholder="Set a password" required >
+    <div [hidden]='model.valid||model.pristine' class="alert alert-warning error"  [(ngModel)]="model.password" #password="ngModel">{{errors.password}}</div>
+    <input type="submit" name="start" value="Get Started">
+  </form>
+
+</div>  
