@@ -8,24 +8,19 @@ import {User} from '../user'
 export class RegisterComponent implements OnInit {
 
 public errors:object = {
+  firstName: 'This field is required',
+  lastName: '',
   email: 'Enter email in format Smth@mail.com',
-  password: 'Password must contains letters, numbers and special sgns',
+  password: 'Password must contains latin letters, numbers and uppercase letters',
   name: 'use latin letters only'
 }
 ;
-
-
-  model: User = new User( "");
-
-  submitted: boolean = false;
-
-  onSubmit() {
-      this.submitted = true;
-  }
-
-  constructor() { }
+  model: User = new User( "", "", "", "");
+   constructor() { }
 
   ngOnInit() {
   }
-
+  /*get diagnostic(){
+    return JSON.stringify(this.model);
+  }*/
 }
