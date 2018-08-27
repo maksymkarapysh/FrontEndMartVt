@@ -1,15 +1,43 @@
 <div class="formCont">
   <h2>Sign Up For Free!</h2>
-  <form action="#">
+  <form action="#" #userform="ngForm">
     <div class="row1">
-        <input type="text" name="firstName" placeholder="First name" required >
-        <input type="text" name="lastName" placeholder="Last name" required >
+      <label for="firstName">
+        <input type="text"
+        name="firstName" 
+        placeholder="First name" 
+        required 
+        [(ngModel)]="model.firstName" 
+        #firstName="ngModel">
+        <div [hidden]='firstName.valid||firstName.pristine' class="alert alert-warning error nameError nameError2">{{errors.firstName}}</div>
+      </label>
+      <label for="lastName">
+        <input type="text" 
+        name="lastName" 
+        placeholder="Last name" 
+        required 
+        [(ngModel)]="model.lastName" 
+        #lastName="ngModel">
+        <div [hidden]='lastName.valid||lastName.pristine' class="alert alert-warning error nameError">{{errors.firstName}}</div>
+      </label>
     </div>
-    <input type="text" name="email" placeholder="Enter your email" required [(ngModel)]="model.email" #email="ngModel">
-    <div [hidden]='model.valid||model.pristine' class="alert alert-warning error">{{errors.email}}</div>
-    <input type="password" name="password" placeholder="Set a password" required >
-    <div [hidden]='model.valid||model.pristine' class="alert alert-warning error"  [(ngModel)]="model.password" #password="ngModel">{{errors.password}}</div>
+    <input type="text" 
+      name="email" 
+      placeholder="Enter your email" 
+      required 
+      [(ngModel)]="model.email"
+      pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"
+      #email="ngModel">
+    <div [hidden]='email.valid||email.pristine' class="alert alert-warning error">{{errors.email}}</div>
+    <input type="password"
+      name="password"
+      placeholder="Set a password" 
+      required [(ngModel)]="model.password" 
+      minlength="8"
+      pattern="((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+      #password="ngModel"> 
+    <div [hidden]='password.valid||password.pristine' class="alert alert-warning error" >{{errors.password}}</div>
     <input type="submit" name="start" value="Get Started">
   </form>
-
+{{diagnostic}}
 </div>  

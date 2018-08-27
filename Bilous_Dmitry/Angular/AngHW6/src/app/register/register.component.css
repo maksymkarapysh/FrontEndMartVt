@@ -11,9 +11,14 @@ h2{
     flex-direction: row;
     justify-content: space-between;
 }
+label{
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
 input{
     cursor: pointer;
-    width: 49%;
     background: transparent;
     padding: 10px 0 10px 10px;
     color: #58656e;
@@ -45,7 +50,10 @@ input[type="submit"]:hover{
     background-color: #23e6b1;
     box-shadow:  2px 2px 5px 0 #777;
 }
-
+.ng-untouched{
+    background-color: transparent; 
+    box-shadow: none;
+}
 .ng-valid[required], .ng-valid.required  {
   background-color: #c3eec5;
   box-shadow: 2px 2px 5px 0  #c3eec5;
@@ -58,4 +66,18 @@ input[type="submit"]:hover{
 .error{
     color: #24303c;
     font-size: 13px;
+}
+.nameError{
+    display: inline-block;
+    content: '';
+    position: absolute;
+    background: #fff;
+    color: #24303c;
+    /*font-size: 14px;*/
+    font-weight: bold;
+    right: -91%;
+}
+.nameError2{
+    right: inherit;
+    left: -88%;
 }
