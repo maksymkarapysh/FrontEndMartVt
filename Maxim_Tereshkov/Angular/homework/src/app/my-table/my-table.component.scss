@@ -6,5 +6,10 @@ table {
   text-align: center;
 }
 .active {
-  background-color: #ff6666;
+  // background-color: #ff6666;
+
+  td {
+    border-bottom: 2px solid #ff6666;
+  }
 }
+

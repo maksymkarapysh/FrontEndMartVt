@@ -8,16 +8,19 @@ import { IProduct } from 'src/app/products.interface';
 })
 export class AddItemComponent {
 
-  item: IProduct = {id: null, name: null, price: null, category: null};
+  id: number;
+  name: string;
+  price: number;
+  category: string;
 
   @Output() newItem = new EventEmitter<IProduct>();
 
-  saveItem() {
+  saveData() {
     this.newItem.emit({
-      id: this.item.id,
-      name : this.item.name,
-      price : this.item.price,
-      category: this.item.category
+      id: this.id,
+      name : this.name,
+      price : this.price,
+      category: this.category
     });
   }
 }

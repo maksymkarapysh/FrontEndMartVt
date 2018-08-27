@@ -10,21 +10,21 @@
   </mat-expansion-panel-header>
 
   <mat-form-field>
-    <input matInput placeholder="ID" [(ngModel)]="item.id">
+    <input matInput placeholder="ID" [(ngModel)]="id">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Name" [(ngModel)]="item.name">
+    <input matInput placeholder="Name" [(ngModel)]="name">
   </mat-form-field>
 
   <mat-form-field>
-      <input matInput placeholder="Price" [(ngModel)]="item.price">
+      <input matInput placeholder="Price" [(ngModel)]="price">
   </mat-form-field>
 
   <mat-form-field>
-      <input matInput placeholder="Category" [(ngModel)]="item.category">
+      <input matInput placeholder="Category" [(ngModel)]="category">
   </mat-form-field>
 
-  <button mat-button color="primary" (click)="saveItem()">Save</button>
+  <button mat-button color="primary" (click)="saveData()">Save</button>
 
 </mat-expansion-panel>
