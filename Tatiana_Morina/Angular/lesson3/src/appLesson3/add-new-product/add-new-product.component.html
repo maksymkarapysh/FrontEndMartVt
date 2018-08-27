@@ -1,0 +1,12 @@
+<div class="container">
+  <input type="text" class="form-control" placeholder="Input id" [(ngModel)]="productId">
+  <input type="text" class="form-control" placeholder="Input product" [(ngModel)]="productName">
+  <input type="text" class="form-control" placeholder="Input price" [(ngModel)]="productPrice">
+</div>
+<div class="container">
+  <button type="button" class="btn btn-primary" (click)="addNewProduct()" >Add New Product</button>
+  <p *ngIf="!addStatus; else successStatus"></p>
+  <ng-template #successStatus>
+    <p>Added successfully!</p>
+  </ng-template>
+</div>

@@ -1,0 +1,12 @@
+.btn {
+    position: relative;
+    float: right;
+    border-radius: 1rem;
+    line-height: 0.5;
+}
+
+.btn-group {
+    position: relative;
+    float: right;
+}
+
