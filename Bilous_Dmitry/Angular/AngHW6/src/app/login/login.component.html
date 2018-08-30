@@ -1,8 +1,14 @@
 <div class="formCont">
     <h2>Log In!</h2>
-    <form action="#">      
-      <input type="text" name="login" placeholder="Your login">
-      <input type="password" name="password" placeholder="Your password">
-      <input type="submit" name="start" value="Get Started">
+    <form action="#" [formGroup]="loginForm">      
+      <input type="text" name="login" id="login" placeholder="User" formControlName="login">
+      <div *ngIf="loginForm.get('login').hasError('required') && 
+      loginForm.get('login').touched" class="alert alert-warning error nameError">{{errors.name}}</div>
+      <input type="password" name="password" id="password" placeholder="Password" formControlName="password" >      
+      <div   class="passError">
+          <div *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('minlength')" class="alert alert-warning error" >{{errors.password.minLength}}</div>
+          <div *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('pattern')" class="alert alert-warning error" >{{errors.password.pattern}}</div>
+      </div>
+      <input *ngIf='loginForm.valid' type="submit" name="start" value="Get Started">
     </form>
 </div>

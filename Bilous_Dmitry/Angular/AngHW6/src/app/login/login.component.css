@@ -45,5 +45,44 @@ input[type="submit"]:hover{
     font-size: 1.6rem;
     background-color: #23e6b1;
     box-shadow:  2px 2px 5px 0 #000;
-    
+}
+/* Errors messages styles*/
+
+.error{
+    color: #24303c;
+    font-size: 13px;
+}
+.nameError{
+    display: inline-block;
+    content: '';
+    position: absolute;
+    background: #fff;
+    color: #24303c;
+    font-weight: bold;
+    right: -144px;
+}
+
+.passError{
+    background: red;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    background: transparent;
+    color: #24303c;
+    font-weight: bold;
+    right: -119px;
+    max-width: 140px;
+}
+.passError div{
+    background: #fff !important;
+}
+.passError div::after, .nameError::after{
+    content: '';
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    left: -20px;
+    top: 12px;
+    border: 10px solid transparent;
+    border-right: 10px solid #fff;
 }

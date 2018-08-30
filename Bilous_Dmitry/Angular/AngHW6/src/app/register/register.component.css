@@ -12,12 +12,12 @@ h2{
     justify-content: space-between;
 }
 label{
-    display: inline-block;
-    position: relative;
+    width: 100%;
     padding: 0;
     margin: 0;
 }
 input{
+    width: 100%;
     cursor: pointer;
     background: transparent;
     padding: 10px 0 10px 10px;
@@ -73,11 +73,60 @@ input[type="submit"]:hover{
     position: absolute;
     background: #fff;
     color: #24303c;
-    /*font-size: 14px;*/
     font-weight: bold;
-    right: -91%;
+    right: -145px;
 }
 .nameError2{
     right: inherit;
-    left: -88%;
+    left: -145px;
+}
+.passError, .email-error{
+    display: inline-block;
+    content: '';
+    position: absolute;
+    background: transparent;
+    color: #24303c;
+    font-weight: bold;
+    right: -122px;
+    max-width: 140px;
+}
+.passError div, .email-error{
+    background: #fff !important;
+}
+.passError div::after, .nameError::after{
+    content: '';
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    left: -20px;
+    top: 12px;
+    border: 10px solid transparent;
+    border-right: 10px solid #fff;
+}
+.nameError2::after{
+    content: '';
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    top: 12px;
+    left: 166px;
+    border: 10px solid transparent;
+    border-left: 10px solid #fff;
+}
+.email-error{
+    content: '';
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    border: 10px solid transparent;
+}
+.email-error::after{
+    content: '';
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute;
+    top: 6px;
+    left: -29px;
+    border: 10px solid transparent;
+    border-right: 10px solid #fff;
 }

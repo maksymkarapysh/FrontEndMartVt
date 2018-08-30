@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import {User} from '../user'
+import {User} from '../user';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,10 +10,12 @@ export class RegisterComponent implements OnInit {
 
 public errors:object = {
   firstName: 'This field is required',
-  lastName: '',
   email: 'Enter email in format Smth@mail.com',
-  password: 'Password must contains latin letters, numbers and uppercase letters',
-  name: 'use latin letters only'
+  password: {
+    pattern: 'Password must contains latin letters, numbers and uppercase letters',
+    minLength:'8 signs min'
+  },
+
 }
 ;
   model: User = new User( "", "", "", "");

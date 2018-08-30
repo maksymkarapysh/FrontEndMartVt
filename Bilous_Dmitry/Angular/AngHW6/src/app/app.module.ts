@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { FormsModule } from "@angular/forms";
     BrowserModule,
     FormsModule,
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
         {path:'login', component: LoginComponent },  
         {path:'register', component: RegisterComponent },            
