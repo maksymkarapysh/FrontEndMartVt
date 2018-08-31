@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { EventEmitter } from 'events';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 const Products = [
   { id: 1, name: 'product 1', price: 100 },
@@ -22,7 +22,7 @@ const Products = [
 export class MyTableComponent implements OnInit {
   products = Products;
   @Input () rows;
-  //@Output () delRow = new EventEmitter();
+  @Output () delRow = new EventEmitter();
 
   constructor( ) {
 
@@ -33,7 +33,7 @@ export class MyTableComponent implements OnInit {
   }
   deleteItem (rowIndex) {
     this.products.splice(rowIndex,1);
-    //this.delRow.emit(rowIndex);
+    this.delRow.emit(rowIndex);
   }
     
 
