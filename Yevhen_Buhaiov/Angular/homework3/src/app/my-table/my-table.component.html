@@ -1,0 +1,43 @@
+<div>
+    <h1 style="text-align:center">
+        Homework3
+    </h1><br/>
+    
+    <div class="container">
+            
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">
+                        <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Category
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
+                            
+                        </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let product of products, let rowIndex = index" [class.red]="product.price > 500" >
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.price}}</td>
+                    <td>
+                        <button (click)="deleteItem(product)" class="btn btn-danger"> X </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
