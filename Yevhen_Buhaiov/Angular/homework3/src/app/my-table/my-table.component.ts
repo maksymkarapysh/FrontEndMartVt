@@ -12,7 +12,14 @@ const Products = [
   { id: 8, name: 'product 8', price: 800 },
   { id: 9, name: 'product 9', price: 900 },
   { id: 10, name: 'product 10', price: 1000}
-]; 
+];
+
+const categories = [
+  "Category 1", 
+  "Category 2", 
+  "Category 3"
+];
+
 
 @Component({
   selector: 'app-my-table',
@@ -21,6 +28,7 @@ const Products = [
 })
 export class MyTableComponent implements OnInit {
   products = Products;
+  categories = categories;
   @Input () rows;
   @Output () delRow = new EventEmitter();
 
@@ -35,6 +43,9 @@ export class MyTableComponent implements OnInit {
     this.products.splice(rowIndex,1);
     this.delRow.emit(rowIndex.id);
   }
+  newProducts(product: {id: number, name: string, price: number}) {
+    this.products.push(product);
+   }
     
 
 

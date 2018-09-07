@@ -17,11 +17,10 @@
                           Category
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
+                          <a class="dropdown-item" *ngFor="let category of categories">{{category}}</a>
+                          
                         </div>
-                      </div>
+                        </div>
                             
                         </th>
                     <th></th>
@@ -41,3 +40,4 @@
         </table>
     </div>
 </div> 
+<app-add-product (AddProduct)="newProducts($event)"></app-add-product>
