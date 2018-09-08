@@ -12,7 +12,7 @@
                     <th scope="col">Product</th>
                     <th scope="col">Price</th>
                     <th scope="col">
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Category
                         </button>
@@ -20,7 +20,17 @@
                           <a class="dropdown-item" *ngFor="let category of categories">{{category}}</a>
                           
                         </div>
-                        </div>
+                        </div> -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" #sel (change)="selectedCategory(sel.value)">
+                              <option selected>Choose...</option>
+                              <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+                              
+                            </select>
+                          </div>
                             
                         </th>
                     <th></th>
@@ -31,9 +41,9 @@
                     <td>{{product.id}}</td>
                     <td>{{product.name}}</td>
                     <td>{{product.price}}</td>
-                    <td>{{product.price}}</td>
+                    <td>{{product.category}}</td>
                     <td>
-                        <button (click)="deleteItem(product)" class="btn btn-danger"> X </button>
+                        <button (click)="deleteItem(rowIndex, product.id)" class="btn btn-danger"> X </button>
                     </td>
                 </tr>
             </tbody>

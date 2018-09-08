@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  consInf(Id) {
-    console.log ("Deleted id:"+ Id );
+  consInf(Del) {
+    console.log ("Deleted id:"+ Del );
   }
 
 }

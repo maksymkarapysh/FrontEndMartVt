@@ -9,8 +9,9 @@ export class AddProductComponent  {
   newId = 11;
   newName = '';
   newPrice = 100;
+  newCategory:string;
   
-  @Output () AddProduct = new EventEmitter<{id: number, name: string, price: number}>();  
+  @Output () AddProduct = new EventEmitter<{id: number, name: string, price: number, category: string}>();  
    
     
   //constructor() { } 
@@ -18,7 +19,8 @@ export class AddProductComponent  {
     this.AddProduct.emit({
       id: this.newId,
       name: this.newName,
-      price: this.newPrice
+      price: this.newPrice,
+      category: this.newCategory
     });
   
 
