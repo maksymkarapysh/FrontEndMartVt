@@ -1,0 +1,7 @@
+
+<!-- двусторонняя привязка -->
+<h2> {{ title }}</h2>
+<p> {{ binding }}</p>
+<input type="text" class="form-control" [(ngModel)] = "inputText">
+<input type="text" class="form-control" value = "{{inputText}}">
+<p> {{ inputText }}</p>
