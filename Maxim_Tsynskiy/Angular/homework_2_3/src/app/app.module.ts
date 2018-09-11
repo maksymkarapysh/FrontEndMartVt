@@ -6,7 +6,8 @@ import { hw1Component } from './hw1/hw1.component';
 import { RouterModule } from "@angular/router";
 import { Hw2Component } from './hw2/hw2.component';
 import { TestingComponent } from './testing/testing.component';
-import { MyTableComponent } from './hw2/my-table/my-table.component'
+import { MyTableComponent } from './hw2/my-table/my-table.component';
+import { FilterCatPipe } from './hw2/my-table/filter-cat.pipe'
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MyTableComponent } from './hw2/my-table/my-table.component'
     hw1Component,
     TestingComponent,
     MyTableComponent,
+    FilterCatPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,8 @@
 <!-- <h2> {{ title }}</h2> -->
 <div class="input-group mb-3">
-  <select class="custom-select" id="inputGroupSelect02">
+  <select class="custom-select" id="inputGroupSelect02"  #sel (change) = "filterProducts(sel.value)">
     <option selected>All Cat</option>
-    <option *ngFor = "let category of cats" [value] = "category" #sel 
-            (change) = "filterProducts(sel.value)">{{ category }}
-    </option>
+    <option *ngFor = "let category of cats" [value] = "category">{{ category }}</option>
   </select>
   <div class="input-group-append">
     <label class="input-group-text" for="inputGroupSelect02">Filter for cat</label>
