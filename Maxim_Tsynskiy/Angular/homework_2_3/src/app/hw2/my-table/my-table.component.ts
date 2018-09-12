@@ -57,9 +57,12 @@ export class MyTableComponent implements OnInit {
       );
      
     }
+    
     filterProducts(valOfCat){
       this.products = Products;
-      this.products = this.products.filter(product => product.cat===valOfCat);
+      if(valOfCat !== "All cat"){
+        this.products = this.products.filter(product => product.cat===valOfCat);
+      }
     }
     // filterCategory() {
     //   return [...Array.from(new Set(this.products.map( item => item.cat )))];
