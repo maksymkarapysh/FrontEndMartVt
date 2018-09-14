@@ -1,0 +1,13 @@
+.container{
+    padding-top: 20px;
+}
+h1{
+    text-align: center;
+    color: #653200;
+}
+nav a.active {
+    border-radius: 3px;
+    padding: 2px 8px;
+    background-color: #0A1135;
+    color:white;
+}

@@ -1,0 +1,9 @@
+<div class="container">
+  <input type="text" class="form-control" placeholder="Id" [(ngModel)]="newId">
+  <input type="text" class="form-control" placeholder="Product" [(ngModel)]="newName">
+  <input type="text" class="form-control" placeholder="Price" [(ngModel)]="newPrice">
+  <input type="text" class="form-control" placeholder="Category" [(ngModel)]="newCategory">
+</div>
+<div class="container">
+  <button type="button" class="btn btn-primary" (click)="addNewProduct()" >Add New Product</button>
+</div>

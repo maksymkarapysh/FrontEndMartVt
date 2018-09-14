@@ -33,7 +33,7 @@ export class MyTableComponent implements OnInit {
   }
   deleteItem (rowIndex) {
     this.products.splice(rowIndex,1);
-    this.delRow.emit(rowIndex);
+    this.delRow.emit(rowIndex.id);
   }
     
 

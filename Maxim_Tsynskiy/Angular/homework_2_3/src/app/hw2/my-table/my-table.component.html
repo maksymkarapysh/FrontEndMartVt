@@ -1,0 +1,36 @@
+<!-- <h2> {{ title }}</h2> -->
+<div class="input-group mb-3">
+  <select class="custom-select" id="inputGroupSelect02"  #sel (change) = "filterProducts(sel.value)">
+    <option selected>{{ optionSelected }}</option>
+    <option *ngFor = "let category of cats" [value] = "category">{{ category }}</option>
+  </select>
+  <div class="input-group-append">
+    <label class="input-group-text" for="inputGroupSelect02">Filter for cat</label>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">costs</th>
+      <th scope="col">cat</th>
+      <th scope="col">del</th>
+    </tr>
+  </thead>
+<tbody>
+  <tr *ngFor = "let products of products, let i = index" [class.danger] = "products.price > 200">
+    <td >{{i+1}}</td>
+    <td >{{products.name}}</td>
+    <td >{{products.price}}</td>
+    <td >{{products.cat}}</td>
+    <td ><button (click) = "deleteProduct(i)" class="btn btn-danger">X</button></td>
+  </tr>
+</tbody>
+</table>
+<div class="input-group">
+  <input class="form-control" type="text" [(ngModel)]="name"  placeholder="enter name">
+  <input class="form-control" type="number" [(ngModel)]="price" placeholder="enter price">
+  <input class="form-control" type="text" [(ngModel)]="cat" placeholder="enter cat">
+  <button class="btn btn-primary" (click)="addProduct()">Add new product</button>
+</div>
