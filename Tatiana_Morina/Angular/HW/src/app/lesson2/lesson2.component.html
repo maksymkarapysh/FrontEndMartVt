@@ -1,0 +1,27 @@
+<div>
+    <div class="container">
+        <h2>
+            HomeWork - {{ title }}!
+        </h2><br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let product of products, let rowIndex = index">
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>
+                        <input type="button" value="x" (click)="deleteRow(rowIndex)" class="btn btn-danger" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

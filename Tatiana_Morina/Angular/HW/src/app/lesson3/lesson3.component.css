@@ -1,0 +1,19 @@
+.btn {
+    position: relative;
+    float: right;
+    border-radius: 1rem;
+    line-height: 0.5;
+}
+
+.btn-group {
+    position: relative;
+    float: right;
+}
+
+.selectCat {
+    position: relative;
+    float: right;
+    border-radius: 0.5rem;
+    line-height: 0.5;
+    background-color: lightskyblue;
+}
